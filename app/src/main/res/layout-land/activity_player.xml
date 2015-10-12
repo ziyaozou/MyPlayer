@@ -104,36 +104,47 @@
             android:paddingTop="16dp">
 
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:paddingBottom="8dp">
+                    <ImageView
+                        android:id="@+id/rewind_btn"
+                        android:layout_width="@dimen/media_control_btn_size"
+                        android:layout_height="@dimen/media_control_btn_size"
+                        android:src="@mipmap/ic_fast_rewind_white_36dp"/>
+
+                    <ImageView
+                        android:id="@+id/start_stop_btn"
+                        android:layout_width="@dimen/media_control_btn_size"
+                        android:layout_height="@dimen/media_control_btn_size"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:src="@mipmap/ic_pause_circle_filled_white_36dp"/>
+
+                    <ImageView
+                        android:id="@+id/forward_btn"
+                        android:layout_width="@dimen/media_control_btn_size"
+                        android:layout_height="@dimen/media_control_btn_size"
+                        android:src="@mipmap/ic_fast_forward_white_36dp"/>
+
+                </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/rewind_btn"
+                    android:id="@+id/setting_btn"
+                    android:layout_gravity="right"
+                    android:src="@mipmap/ic_settings_white_36dp"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
                     android:layout_width="@dimen/media_control_btn_size"
-                    android:layout_height="@dimen/media_control_btn_size"
-                    android:src="@mipmap/ic_fast_rewind_white_36dp"/>
+                    android:layout_height="@dimen/media_control_btn_size"/>
 
-                <ImageView
-                    android:id="@+id/start_stop_btn"
-                    android:layout_width="@dimen/media_control_btn_size"
-                    android:layout_height="@dimen/media_control_btn_size"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:src="@mipmap/ic_pause_circle_filled_white_36dp"/>
-
-                <ImageView
-                    android:id="@+id/forward_btn"
-                    android:layout_width="@dimen/media_control_btn_size"
-                    android:layout_height="@dimen/media_control_btn_size"
-                    android:src="@mipmap/ic_fast_forward_white_36dp"/>
-
-            </LinearLayout>
-
+            </FrameLayout>
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

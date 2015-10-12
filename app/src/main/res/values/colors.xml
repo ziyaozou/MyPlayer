@@ -2,4 +2,11 @@
 <resources>
     <color name="bg_grey">#1D212E</color>
     <color name="progress_color">#F6FFEF</color>
+
+    <color name="floating_button_normal">#009688</color>
+    <color name="cancle_button_normal">#F44336</color>
+    <color name="floating_button_press">#727272</color>
+    <color name="background_color">#03A9F4</color>
+    <color name="background_color2">#727272</color>
+    <color name="total_background_color">#FFFFFF</color>
 </resources>

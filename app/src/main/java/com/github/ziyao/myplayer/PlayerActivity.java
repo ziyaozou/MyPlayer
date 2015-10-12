@@ -22,6 +22,7 @@ import android.widget.TextView;
 
 import com.gc.materialdesign.views.ProgressBarCircularIndeterminate;
 import com.gc.materialdesign.views.Slider;
+import com.gc.materialdesign.widgets.Dialog;
 import com.github.ziyao.myplayer.player.DashRendererBuilder;
 import com.github.ziyao.myplayer.player.DemoPlayer;
 import com.github.ziyao.myplayer.player.ExtractorRendererBuilder;
@@ -76,6 +77,7 @@ public class PlayerActivity extends Activity
     private ImageView forwardButton;
     private ImageView stopButton;
     private ImageView rewindButton;
+    private ImageView settingButton;
     private Slider progressSlider;
     private TextView currentTimeText;
     private TextView endTimeText;
@@ -173,6 +175,7 @@ public class PlayerActivity extends Activity
         forwardButton = ( ImageView ) findViewById(R.id.forward_btn);
         stopButton = ( ImageView ) findViewById(R.id.start_stop_btn);
         rewindButton = ( ImageView ) findViewById(R.id.rewind_btn);
+        settingButton = (ImageView)findViewById(R.id.setting_btn);
         progressSlider = ( Slider ) findViewById(R.id.slider);
         currentTimeText = ( TextView ) findViewById(R.id.current_time);
         endTimeText = ( TextView ) findViewById(R.id.end_time);
@@ -221,6 +224,7 @@ public class PlayerActivity extends Activity
         stopButton.setOnClickListener(this);
         rewindButton.setOnClickListener(this);
         surfaceView.setOnClickListener(this);
+        settingButton.setOnClickListener(this);
 
         brightnessControlView.setOnTouchListener(new View.OnTouchListener(){
             private float y1;
@@ -594,6 +598,8 @@ public class PlayerActivity extends Activity
                     hintContainer.setVisibility(View.INVISIBLE);
                 }
 
+                break;
+            case R.id.setting_btn:
                 break;
 
         }
