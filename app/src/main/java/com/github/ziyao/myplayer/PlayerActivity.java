@@ -208,7 +208,7 @@ public class PlayerActivity extends Activity
 
         audioManager = (AudioManager) getSystemService(Service.AUDIO_SERVICE);
         currentVolume = audioManager.getStreamVolume( AudioManager.STREAM_MUSIC );
-        currentBrightness = getWindow().getAttributes().screenBrightness*100;
+        currentBrightness = 50;
 
         audioControlWidth = getResources().getDimensionPixelSize( R.dimen.audio_light_control_width );
         audioControlHeight = getResources().getDimensionPixelSize(R.dimen.audio_light_control_width);
@@ -600,11 +600,17 @@ public class PlayerActivity extends Activity
 
                 break;
             case R.id.setting_btn:
+                showDialog();
                 break;
 
         }
         progressSlider.setValue(( int ) playerPosition);
         progressSlider.invalidate();
+    }
+
+    public void showDialog(){
+        Dialog dialog = new Dialog(this,"Setting", "hello");
+        dialog.show();
     }
 
 }

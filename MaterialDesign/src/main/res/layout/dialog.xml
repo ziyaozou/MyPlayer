@@ -44,6 +44,13 @@
                     android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
                     android:textColor="#000"
                     android:textSize="18sp" />
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </RadioGroup>
             </LinearLayout>
         </ScrollView>
 

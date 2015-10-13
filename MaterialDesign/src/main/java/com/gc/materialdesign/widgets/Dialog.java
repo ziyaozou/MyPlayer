@@ -5,15 +5,20 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.gc.materialdesign.R;
 import com.gc.materialdesign.views.ButtonFlat;
+
+import java.util.ArrayList;
 
 public class Dialog extends android.app.Dialog{
 	
@@ -27,8 +32,11 @@ public class Dialog extends android.app.Dialog{
 	
 	ButtonFlat buttonAccept;
 	ButtonFlat buttonCancel;
+
+	RadioGroup radioGroup;
 	
 	String buttonCancelText;
+	int radioPadding;
 	
 	View.OnClickListener onAcceptButtonClickListener;
 	View.OnClickListener onCancelButtonClickListener;
@@ -103,6 +111,30 @@ public class Dialog extends android.app.Dialog{
 				}
 			});
 	    }
+
+
+		radioGroup = (RadioGroup)findViewById( R.id.radio_group );
+		radioPadding = context.getResources().getDimensionPixelSize( R.dimen.radio_padding );
+	}
+
+	public void configRadioGroup( ArrayList<String> options){
+
+
+		int count = options.size();
+
+		if( options==null || count<1 ){
+			return;
+		}
+		for( int i=0;i<count;++i ){
+			RadioButton rb = new RadioButton(context);
+			rb.setText(options.get(i));
+			RadioGroup.LayoutParams params = new RadioGroup.LayoutParams
+					(RadioGroup.LayoutParams.WRAP_CONTENT, RadioGroup.LayoutParams.WRAP_CONTENT);
+			params.setMargins(0,0,0,radioPadding);
+			rb.setLayoutParams(params);
+			radioGroup.addView(rb);
+		}
+
 	}
 	
 	@Override

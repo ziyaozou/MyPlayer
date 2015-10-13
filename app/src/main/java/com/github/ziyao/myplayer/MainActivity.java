@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.gc.materialdesign.views.ProgressBarCircularIndeterminate;
 import com.github.ziyao.fablibrary.FloatingActionButton;
@@ -88,7 +89,7 @@ public class MainActivity extends ActionBarActivity{
                 fButton.setImageResource( R.mipmap.ic_add_white_36dp );
                 editText.setVisibility(View.INVISIBLE);
                 realImage.setBackgroundColor(getResources().getColor(R.color.background_color));
-                cButton.setVisibility( View.INVISIBLE );
+                cButton.setVisibility(View.INVISIBLE);
                 isPlay = false;
             }
         });
@@ -130,12 +131,10 @@ public class MainActivity extends ActionBarActivity{
 
     public void playAction(View v){
 
-        String ip = editText.getText().toString();
-        String uri;
-        if( ip != null && !"".equals(ip) ){
-            uri = "http://192.168.1." + ip + ":8080/source/car-20120827-manifest.mpd";
-        }else{
-            uri = "http://192.168.1.107:8080/source/car-20120827-manifest.mpd";
+        String uri = editText.getText().toString();
+        if( uri != null && !"".equals(uri) ){
+            Toast.makeText(this,"Null uri", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         String contentId = "youtube";
